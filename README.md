@@ -42,8 +42,10 @@ from magika import Magika
 m = Magika()
 result = m.identify_path("suspicious_file.bin")
 print(result.output.ct_label)  # e.g. "pdf"
-print(result.output.score)     # confidence score
+print(result.output.score)     # confidence score (0.0 to 1.0)
 ```
+
+> **Note:** By default, Magika uses a confidence threshold of `0.5`. Results with a score below this threshold are labeled as `unknown`. You can override this with the `prediction_mode` parameter.
 
 ## Supported File Types
 
