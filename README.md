@@ -77,6 +77,13 @@ pip install -e ".[dev]"
 pytest tests/
 ```
 
+## Personal Notes
+
+I'm using this project to learn more about how deep learning models can be applied to file analysis. A few things I want to explore:
+
+- How the model handles adversarially crafted files
+- Performance benchmarks compared to `file(1)` on large directory trees
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or pull request.
