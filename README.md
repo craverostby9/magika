@@ -84,6 +84,7 @@ I'm using this project to learn more about how deep learning models can be appli
 - How the model handles adversarially crafted files
 - Performance benchmarks compared to `file(1)` on large directory trees
 - Whether bumping the confidence threshold to `0.75` reduces false positives on mixed binary/text files (trying this out locally)
+- **Update (2024-06):** Initial tests with threshold `0.75` look promising — false positive rate on a ~10k mixed file corpus dropped noticeably. Will write up results once I have a larger sample.
 
 ## Contributing
 
