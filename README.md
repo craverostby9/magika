@@ -47,6 +47,8 @@ print(result.output.score)     # confidence score (0.0 to 1.0)
 
 > **Note:** By default, Magika uses a confidence threshold of `0.5`. Results with a score below this threshold are labeled as `unknown`. You can override this with the `prediction_mode` parameter.
 
+> **Personal default:** I run most of my scripts with a threshold of `0.75` — see Personal Notes below for context.
+
 ## Supported File Types
 
 Magika supports detection of 100+ content types including:
@@ -85,6 +87,7 @@ I'm using this project to learn more about how deep learning models can be appli
 - Performance benchmarks compared to `file(1)` on large directory trees
 - Whether bumping the confidence threshold to `0.75` reduces false positives on mixed binary/text files (trying this out locally)
 - **Update (2024-06):** Initial tests with threshold `0.75` look promising — false positive rate on a ~10k mixed file corpus dropped noticeably. Will write up results once I have a larger sample.
+- **Update (2024-07):** Ran a follow-up pass on a ~50k file corpus. Threshold `0.75` consistently cuts false positives by ~30% with only a small increase in `unknown` labels (~4%). Feels like a worthwhile trade-off for my use case. Planning to open an issue upstream to discuss exposing this as a named preset.
 
 ## Contributing
 
