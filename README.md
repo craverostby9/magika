@@ -49,6 +49,21 @@ print(result.output.score)     # confidence score (0.0 to 1.0)
 
 > **Personal default:** I run most of my scripts with a threshold of `0.75` — see Personal Notes below for context.
 
+### Batch identification
+
+When scanning many files at once, use `identify_paths` for better performance:
+
+```python
+from magika import Magika
+from pathlib import Path
+
+m = Magika()
+paths = list(Path("./directory").rglob("*"))
+results = m.identify_paths(paths)
+for path, result in zip(paths, results):
+    print(f"{path}: {result.output.ct_label} ({result.output.score:.2f})")
+```
+
 ## Supported File Types
 
 Magika supports detection of 100+ content types including:
@@ -99,4 +114,4 @@ See [CODEOWNERS](.github/CODEOWNERS) for maintainer information.
 
 Apache 2.0 — see [LICENSE](LICENSE) for details.
 
-This project is a fork of [google/magika](https://github.com/google/magika), originally developed by Google.
+This project is a fork of [google/magika](https://github.com/google/magika).
